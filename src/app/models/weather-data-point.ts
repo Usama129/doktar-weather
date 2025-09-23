@@ -11,7 +11,7 @@ export interface HourWeatherDataPoint {
   wind_speed: number;
   wind_deg: number;
   wind_gust: number;
-  weather: { id: number, main: string, description: string, icon: string };
+  weather: { id: number, main: string, description: string, icon: string }[];
   pop: number;
 }
 
@@ -31,7 +31,7 @@ export interface DayWeatherDataPoint {
   wind_speed: number;
   wind_deg: number;
   wind_gust: number;
-  weather: { id: number, main: string, description: string, icon: string };
+  weather: { id: number, main: string, description: string, icon: string }[];
   clouds: number;
   pop: number;
   uvi: number;

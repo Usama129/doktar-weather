@@ -14,7 +14,7 @@ export class WeatherDataService {
   constructor(private http: HttpClient, @Inject(OWM_BASE_URL) private baseUrl: string, private appState: AppStateService) {
     effect(() => {
       const latLong = this.appState.selectedLatLong();
-      if (latLong) {
+      if (latLong && latLong.lat && latLong.lon) {
         this.fetchWeatherData(latLong).subscribe();
       }
     });
