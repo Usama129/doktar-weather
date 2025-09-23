@@ -5,6 +5,7 @@ import {catchError, distinctUntilChanged, finalize, mergeMap, of, Subject, tap} 
 import {AppStateService} from '../../core/state/app-state.service';
 import {City, OwmLocation} from '../../models/location';
 import {GeocodingService} from '../../services/geocoding/geocoding.service';
+import {ToastService} from '../../services/toast.service';
 
 enum SearchBy {
   City = 'City',
@@ -36,7 +37,8 @@ export class SearchLocationComponent implements OnInit {
   private loading: boolean = false;
 
   constructor(private appStateService: AppStateService,
-              private geocodingService: GeocodingService) {}
+              private geocodingService: GeocodingService,
+              private toastService: ToastService) {}
 
   ngOnInit() {
     this.cityNameQuery$.pipe(
@@ -48,11 +50,19 @@ export class SearchLocationComponent implements OnInit {
           return of([]);
         }
         return this.geocodingService.searchCityName(`${term},${this.getSelectedCountryCode()}`).pipe(
-          catchError(() => of([])),
+          catchError(() => {
+            this.toastService.show('No cities found - please check selected country', 'danger');
+            return of([]);
+          }),
           finalize(() => this.loading = false),
         );
       }),
-    ).subscribe((results: City[]) => this.results = results);
+    ).subscribe((results: City[]) => {
+      this.results = results;
+      if (results.length == 0) {
+        this.showCityError();
+      }
+    });
   }
 
   getSelectedCountryCode(): string {
@@ -103,7 +113,11 @@ export class SearchLocationComponent implements OnInit {
           this.results = [location];
         }
       }),
-      catchError(() => this.results = []),
+      catchError(() => {
+        this.results = [];
+        this.showZipCodeError();
+        return of(undefined);
+      }),
       finalize(() => {
         this.loading = false;
       }),
@@ -120,6 +134,14 @@ export class SearchLocationComponent implements OnInit {
     } else if (this.isSearchByZipCode()) {
       this.searchZipCode()
     }
+  }
+
+  private showZipCodeError(): void {
+    this.toastService.show('Problem with zip code. If you are not searching in ' + this.getSelectedCountryCode() + ', select correct country from above', 'danger');
+  }
+
+  private showCityError(): void {
+    this.toastService.show('No cities found. If you are not searching in ' + this.getSelectedCountryCode() + ', select correct country above', 'danger');
   }
 
   protected readonly SearchBy = SearchBy;
