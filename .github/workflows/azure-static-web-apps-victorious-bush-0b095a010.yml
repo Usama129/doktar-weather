@@ -31,10 +31,10 @@ jobs:
           cache: npm
       - name: Write environment.prod.ts
         run: |
-            cat > src/environments/environment.prod.ts <<'EOF'
+            cat > src/app/environments/environment.prod.ts <<'EOF'
             export const environment = {
               production: true,
-              apiBaseUrl: '${{ secrets.OWM_API_BASE_URL }}'
+              apiBaseUrl: '${{ secrets.OWM_API_BASE_URL }}',
               owmApiKey: '${{ secrets.OWM_API_KEY }}'
             };
             EOF
