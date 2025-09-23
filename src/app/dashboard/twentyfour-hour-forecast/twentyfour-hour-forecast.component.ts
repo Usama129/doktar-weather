@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {WeatherDataService} from '../../services/weather-data/weather-data.service';
 import {WeatherDataResponseDto} from '../../services/weather-data/weather-data.dto';
-import {DayWeatherDataPoint, HourWeatherDataPoint} from '../../models/weather-data-point';
+import {HourWeatherDataPoint} from '../../models/weather';
+import {AppStateService} from '../../core/state/app-state.service';
 
 @Component({
   selector: 'twentyfour-hour-forecast',
   imports: [],
-  providers: [WeatherDataService],
+  providers: [],
   templateUrl: './twentyfour-hour-forecast.component.html',
   styleUrl: './twentyfour-hour-forecast.component.scss'
 })
 export class TwentyfourHourForecastComponent {
 
-  constructor(private weatherDataService: WeatherDataService) { }
+  constructor(private weatherDataService: WeatherDataService,
+              private appStateService: AppStateService) { }
 
   getWeather(): WeatherDataResponseDto | undefined {
     return this.weatherDataService.weather();
@@ -38,7 +40,12 @@ export class TwentyfourHourForecastComponent {
     return `${hours}:${minutes}`;
   }
 
-  getTemperature(hourWeatherData: HourWeatherDataPoint): string {
-    return hourWeatherData.temp.toFixed(0);
+  getTemperatureDisplay(hourWeatherData: HourWeatherDataPoint): string {
+    const symbol = this.getTemperatureSymbol();
+    return `${hourWeatherData.temp.toFixed(0)} ${symbol}`;
+  }
+
+  private getTemperatureSymbol(): string {
+    return this.appStateService.isFahrenheitSelected() ? "°F" : "°C";
   }
 }

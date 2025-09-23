@@ -36,3 +36,8 @@ export interface DayWeatherDataPoint {
   pop: number;
   uvi: number;
 }
+
+export enum Unit {
+  Metric = 'metric',
+  Imperial = 'imperial'
+}

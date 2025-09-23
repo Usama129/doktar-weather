@@ -1,17 +1,19 @@
 import {Component} from '@angular/core';
 import {WeatherDataService} from '../../services/weather-data/weather-data.service';
 import {WeatherDataResponseDto} from '../../services/weather-data/weather-data.dto';
+import {AppStateService} from '../../core/state/app-state.service';
 
 @Component({
   selector: 'current-weather',
   imports: [],
-  providers: [WeatherDataService],
+  providers: [],
   templateUrl: './current-weather.component.html',
   styleUrl: './current-weather.component.scss'
 })
 export class CurrentWeatherComponent {
 
-  constructor(private weatherDataService: WeatherDataService) { }
+  constructor(private weatherDataService: WeatherDataService,
+              private appStateService: AppStateService) { }
 
   getWeather(): WeatherDataResponseDto | undefined {
     return this.weatherDataService.weather();
@@ -28,8 +30,12 @@ export class CurrentWeatherComponent {
     return `https://openweathermap.org/img/wn/${this.getWeather()?.current.weather[0].icon}@4x.png`
   }
 
-  getCurrentTemperature(): number | undefined {
-    return this.getWeather()?.current.temp;
+  getCurrentTemperatureDisplay(): string | undefined {
+    if (!this.hasWeather()) {
+      return undefined;
+    }
+    const symbol = this.getTemperatureSymbol();
+    return `${this.getWeather()?.current.temp} ${symbol}`;
   }
 
   getDescription(): string | undefined {
@@ -44,7 +50,15 @@ export class CurrentWeatherComponent {
     return this.getWeather()?.current.wind_speed;
   }
 
-  getFeelsLike(): number | undefined {
-    return this.getWeather()?.current.feels_like;
+  getFeelsLikeDisplay(): string | undefined {
+    if (!this.hasWeather()) {
+      return undefined;
+    }
+    const symbol = this.getTemperatureSymbol();
+    return `${this.getWeather()?.current.feels_like} ${symbol}`;
+  }
+
+  private getTemperatureSymbol(): string {
+    return this.appStateService.isFahrenheitSelected() ? "°F" : "°C";
   }
 }

@@ -1,9 +1,10 @@
-import {DayWeatherDataPoint, HourWeatherDataPoint} from '../../models/weather-data-point';
+import {DayWeatherDataPoint, HourWeatherDataPoint, Unit} from '../../models/weather';
 
 export interface WeatherDataRequestDto {
   [param: string]: string | number | boolean | ReadonlyArray<string|number|boolean>;
   lat: number;
   lon: number;
+  units: Unit
 }
 
 export interface WeatherDataResponseDto {

@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./components/header/header.component";
-import {SearchLocationComponent} from './components/search-location/search-location.component';
-import {CurrentWeatherComponent} from './components/current-weather/current-weather.component';
-import {FiveDayForecastComponent} from './components/five-day-forecast/five-day-forecast.component';
+import { HeaderComponent } from "./dashboard/header/header.component";
+import {SearchLocationComponent} from './dashboard/search-location/search-location.component';
+import {CurrentWeatherComponent} from './dashboard/current-weather/current-weather.component';
+import {FiveDayForecastComponent} from './dashboard/five-day-forecast/five-day-forecast.component';
 import {
   TwentyfourHourForecastComponent
-} from './components/twentyfour-hour-forecast/twentyfour-hour-forecast.component';
+} from './dashboard/twentyfour-hour-forecast/twentyfour-hour-forecast.component';
 
 @Component({
   selector: 'app-root',

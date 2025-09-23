@@ -4,8 +4,9 @@ import {Observable, tap} from 'rxjs';
 import {WeatherDataRequestDto, WeatherDataResponseDto} from './weather-data.dto';
 import {OWM_BASE_URL} from '../../app.config';
 import {AppStateService} from '../../core/state/app-state.service';
+import {Unit} from '../../models/weather';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class WeatherDataService {
 
   private readonly endpoint = "data/3.0/onecall";
@@ -14,8 +15,9 @@ export class WeatherDataService {
   constructor(private http: HttpClient, @Inject(OWM_BASE_URL) private baseUrl: string, private appState: AppStateService) {
     effect(() => {
       const latLong = this.appState.selectedLatLong();
+      const units = this.appState.isFahrenheitSelected() ? Unit.Imperial : Unit.Metric;
       if (latLong && latLong.lat && latLong.lon) {
-        this.fetchWeatherData(latLong).subscribe();
+        this.fetchWeatherData({...latLong, units}).subscribe();
       }
     });
   }

@@ -1,18 +1,20 @@
 import {Component} from '@angular/core';
 import {WeatherDataService} from '../../services/weather-data/weather-data.service';
 import {WeatherDataResponseDto} from '../../services/weather-data/weather-data.dto';
-import {DayWeatherDataPoint} from '../../models/weather-data-point';
+import {DayWeatherDataPoint} from '../../models/weather';
+import {AppStateService} from '../../core/state/app-state.service';
 
 @Component({
   selector: 'five-day-forecast',
   imports: [],
-  providers: [WeatherDataService],
+  providers: [],
   templateUrl: './five-day-forecast.component.html',
   styleUrl: './five-day-forecast.component.scss'
 })
 export class FiveDayForecastComponent {
 
-  constructor(private weatherDataService: WeatherDataService) { }
+  constructor(private weatherDataService: WeatherDataService,
+              private appStateService: AppStateService) { }
 
   getWeather(): WeatherDataResponseDto | undefined {
     return this.weatherDataService.weather();
@@ -40,6 +42,11 @@ export class FiveDayForecastComponent {
   }
 
   getMinMaxTemp(dayWeatherData: DayWeatherDataPoint): string {
-    return `${dayWeatherData.temp.min.toFixed(0)} F / ${dayWeatherData.temp.max.toFixed(0)} F`;
+    const symbol = this.getTemperatureSymbol();
+    return `${dayWeatherData.temp.min.toFixed(0)} ${symbol} / ${dayWeatherData.temp.max.toFixed(0)} ${symbol}`;
+  }
+
+  private getTemperatureSymbol(): string {
+    return this.appStateService.isFahrenheitSelected() ? "°F" : "°C";
   }
 }
