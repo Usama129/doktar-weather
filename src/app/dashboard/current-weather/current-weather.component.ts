@@ -23,6 +23,10 @@ export class CurrentWeatherComponent {
     return !!this.weatherDataService.weather();
   }
 
+  isLoading(): boolean {
+    return this.weatherDataService.loadingWeatherData();
+  }
+
   getIconUrl(): string | undefined {
     if (!this.hasWeather()) {
       return undefined;
@@ -35,7 +39,7 @@ export class CurrentWeatherComponent {
       return undefined;
     }
     const symbol = this.getTemperatureSymbol();
-    return `${this.getWeather()?.current.temp} ${symbol}`;
+    return `${this.getWeather()?.current.temp.toFixed(0)} ${symbol}`;
   }
 
   getDescription(): string | undefined {
@@ -55,7 +59,7 @@ export class CurrentWeatherComponent {
       return undefined;
     }
     const symbol = this.getTemperatureSymbol();
-    return `${this.getWeather()?.current.feels_like} ${symbol}`;
+    return `${this.getWeather()?.current.feels_like.toFixed(0)} ${symbol}`;
   }
 
   private getTemperatureSymbol(): string {

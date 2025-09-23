@@ -1,6 +1,6 @@
 import {effect, Inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, tap} from 'rxjs';
+import {finalize, Observable, tap} from 'rxjs';
 import {WeatherDataRequestDto, WeatherDataResponseDto} from './weather-data.dto';
 import {OWM_BASE_URL} from '../../app.config';
 import {AppStateService} from '../../core/state/app-state.service';
@@ -11,6 +11,7 @@ export class WeatherDataService {
 
   private readonly endpoint = "data/3.0/onecall";
   readonly weather = signal<WeatherDataResponseDto | undefined>(undefined);
+  readonly loadingWeatherData = signal<boolean>(false);
 
   constructor(private http: HttpClient, @Inject(OWM_BASE_URL) private baseUrl: string, private appState: AppStateService) {
     effect(() => {
@@ -23,10 +24,12 @@ export class WeatherDataService {
   }
 
   fetchWeatherData(params: WeatherDataRequestDto): Observable<WeatherDataResponseDto> {
+    this.loadingWeatherData.set(true);
     return this.http.get<WeatherDataResponseDto>(`${this.baseUrl}/${this.endpoint}`, {params}).pipe(
       tap(response => {
         this.weather.set(response);
-      })
+      }),
+      finalize(() => this.loadingWeatherData.set(false))
     );
   }
 }

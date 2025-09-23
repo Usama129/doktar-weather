@@ -24,6 +24,10 @@ export class TwentyfourHourForecastComponent {
     return !!this.weatherDataService.weather();
   }
 
+  isLoading(): boolean {
+    return this.weatherDataService.loadingWeatherData();
+  }
+
   getHourlyData(): HourWeatherDataPoint[] | undefined {
     return this.getWeather()?.hourly.slice(0, 24);
   }

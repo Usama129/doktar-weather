@@ -1,27 +1,35 @@
-<div class="d-flex my-3 flex-column flex-sm-row align-items-center">
-  <img
-    [src]="getIconUrl()"
-    class="mx-1"
-    alt="icon"
-    width="50"
-    height="50"
-  />
-  <div class="d-flex flex-column">
-    <h4>{{getCurrentTemperatureDisplay()}}</h4>
-    <span>{{getDescription()}}</span>
+@if (isLoading()) {
+  <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-secondary m-5" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   </div>
-</div>
-<div class="d-flex justify-content-between my-3 flex-column flex-md-row flex-wrap">
-  <div class="flex-fill rounded-2 bg-secondary bg-opacity-10 p-2 m-2 d-flex flex-column shadow-sm">
-    <span class="weather-kpi-label text-black-50">Humidity</span>
-    <span>{{getHumidity()}}%</span>
+} @else {
+  <div class="d-flex my-3 flex-column flex-sm-row align-items-center">
+    <img
+      [src]="getIconUrl()"
+      class="mx-1"
+      alt="icon"
+      width="50"
+      height="50"
+    />
+    <div class="d-flex flex-column">
+      <h4>{{getCurrentTemperatureDisplay()}}</h4>
+      <span>{{getDescription()}}</span>
+    </div>
   </div>
-  <div class="flex-fill rounded-2 bg-secondary bg-opacity-10 p-2 m-2 d-flex flex-column shadow-sm">
-    <span class="weather-kpi-label text-black-50">Wind</span>
-    <span>{{getWindSpeed()}} m/s</span>
+  <div class="d-flex justify-content-between my-3 flex-column flex-md-row flex-wrap">
+    <div class="flex-fill rounded-2 bg-secondary bg-opacity-10 p-2 m-2 d-flex flex-column shadow-sm">
+      <span class="weather-kpi-label text-black-50">Humidity</span>
+      <span>{{getHumidity()}}%</span>
+    </div>
+    <div class="flex-fill rounded-2 bg-secondary bg-opacity-10 p-2 m-2 d-flex flex-column shadow-sm">
+      <span class="weather-kpi-label text-black-50">Wind</span>
+      <span>{{getWindSpeed()}} m/s</span>
+    </div>
+    <div class="flex-fill rounded-2 bg-secondary bg-opacity-10 p-2 m-2 d-flex flex-column shadow-sm">
+      <span class="weather-kpi-label text-black-50">Feels Like</span>
+      <span>{{getFeelsLikeDisplay()}}</span>
+    </div>
   </div>
-  <div class="flex-fill rounded-2 bg-secondary bg-opacity-10 p-2 m-2 d-flex flex-column shadow-sm">
-    <span class="weather-kpi-label text-black-50">Feels Like</span>
-    <span>{{getFeelsLikeDisplay()}}</span>
-  </div>
-</div>
+}
