@@ -51,7 +51,6 @@ export class SearchLocationComponent implements OnInit {
         }
         return this.geocodingService.searchCityName(`${term},${this.getSelectedCountryCode()}`).pipe(
           catchError(() => {
-            this.toastService.show('No cities found - please check selected country', 'danger');
             return of([]);
           }),
           finalize(() => this.loading = false),
