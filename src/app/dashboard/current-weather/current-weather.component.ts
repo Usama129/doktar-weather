@@ -27,6 +27,10 @@ export class CurrentWeatherComponent {
     return this.weatherDataService.loadingWeatherData();
   }
 
+  hasError(): boolean {
+    return this.weatherDataService.errorFetchingWeather();
+  }
+
   getIconUrl(): string | undefined {
     if (!this.hasWeather()) {
       return undefined;

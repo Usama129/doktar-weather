@@ -28,6 +28,10 @@ export class FiveDayForecastComponent {
     return this.weatherDataService.loadingWeatherData();
   }
 
+  hasError(): boolean {
+    return this.weatherDataService.errorFetchingWeather();
+  }
+
   getDailyData(): DayWeatherDataPoint[] | undefined {
     return this.getWeather()?.daily.slice(1, 6);
   }

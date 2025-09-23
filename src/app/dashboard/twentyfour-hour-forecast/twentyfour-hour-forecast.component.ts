@@ -28,6 +28,10 @@ export class TwentyfourHourForecastComponent {
     return this.weatherDataService.loadingWeatherData();
   }
 
+  hasError(): boolean {
+    return this.weatherDataService.errorFetchingWeather();
+  }
+
   getHourlyData(): HourWeatherDataPoint[] | undefined {
     return this.getWeather()?.hourly.slice(0, 24);
   }

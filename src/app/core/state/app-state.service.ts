@@ -5,7 +5,7 @@ export class AppStateService {
 
   readonly selectedCountryCode = signal<string>("TR");
   readonly selectedLocationName = signal<string>("Ankara");
-  readonly selectedLatLong = signal({lat: 0, lon: 0});
+  readonly selectedLatLong = signal({lat: 39.9207886, lon: 32.8540482});
   readonly isFahrenheitSelected = signal<boolean>(false);
 
   setSelectedCountry(countryCode: string): void {

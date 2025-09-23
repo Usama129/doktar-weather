@@ -4,6 +4,10 @@
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
+} @else if (hasError()) {
+  <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+    <i class="fa-solid fa-triangle-exclamation fa-3x"></i>
+  </div>
 } @else {
   <div class="d-flex py-2 flex-row flex-wrap justify-content-between">
     @for (day of getDailyData(); track $index) {
