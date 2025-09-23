@@ -4,10 +4,13 @@ import { HeaderComponent } from "./components/header/header.component";
 import {SearchLocationComponent} from './components/search-location/search-location.component';
 import {CurrentWeatherComponent} from './components/current-weather/current-weather.component';
 import {FiveDayForecastComponent} from './components/five-day-forecast/five-day-forecast.component';
+import {
+  TwentyfourHourForecastComponent
+} from './components/twentyfour-hour-forecast/twentyfour-hour-forecast.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, SearchLocationComponent, CurrentWeatherComponent, FiveDayForecastComponent],
+  imports: [RouterOutlet, HeaderComponent, SearchLocationComponent, CurrentWeatherComponent, FiveDayForecastComponent, TwentyfourHourForecastComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

@@ -1,1 +1,14 @@
-<p>twentyfour-hour-forecast works!</p>
+<div class="d-flex py-2 flex-row flex-no-wrap overflow-x-scroll justify-content-between">
+  @for (hour of getHourlyData(); track $index) {
+    <div class="rounded-2 shadow-sm p-3 p-md-4 me-3 my-2 d-flex flex-column align-items-center">
+      <span class="text-muted">{{getHourDisplay(hour)}}</span>
+      <img [src]="getIconUrl(hour)"
+           class="mx-1"
+           alt="icon"
+           width="50"
+           height="50"
+      />
+      <span>{{getTemperature(hour)}} F</span>
+    </div>
+  }
+</div>
