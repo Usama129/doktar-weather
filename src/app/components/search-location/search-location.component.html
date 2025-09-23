@@ -1,5 +1,5 @@
-<form class="d-flex w-100 mx-auto" role="search">
-  <div class="input-group me-2" ngbDropdown #resultsDropdown="ngbDropdown" [autoClose]="'outside'">
+<form class="d-flex w-100 mx-auto flex-column align-items-center flex-sm-row" role="search">
+  <div class="input-group me-2 my-2" ngbDropdown #resultsDropdown="ngbDropdown" [autoClose]="'outside'">
     <input #anchor class="form-control rounded-2"
            type="search"
            [placeholder]="isSearchByCity() ? 'City Name' : 'Zip Code'"
@@ -33,7 +33,7 @@
 
   </div>
 
-  <div class="btn-group me-2 d-inline-flex align-items-center flex-shrink-0" ngbDropdown role="group">
+  <div class="search-by btn-group me-2 my-2 d-inline-flex align-items-center flex-shrink-0" ngbDropdown role="group">
     <button [disabled]="!isValidQueryLength()" (click)="onSearch()" type="submit" class="btn btn-primary">Search {{ searchBy ?? "Search By" }}</button>
     <button type="button" class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
     <div class="dropdown-menu" ngbDropdownMenu>
