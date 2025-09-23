@@ -34,7 +34,7 @@ jobs:
             cat > src/app/environments/environment.prod.ts <<'EOF'
             export const environment = {
               production: true,
-              apiBaseUrl: '${{ secrets.OWM_API_BASE_URL }}',
+              owmApiBaseUrl: '${{ secrets.OWM_API_BASE_URL }}',
               owmApiKey: '${{ secrets.OWM_API_KEY }}'
             };
             EOF
