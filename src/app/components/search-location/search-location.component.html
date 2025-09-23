@@ -1,0 +1,48 @@
+<form class="d-flex w-100 mx-auto" role="search">
+  <div class="input-group me-2" ngbDropdown #resultsDropdown="ngbDropdown" [autoClose]="'outside'">
+    <input #anchor class="form-control rounded-2"
+           type="search"
+           [placeholder]="isSearchByCity() ? 'City Name' : 'Zip Code'"
+           aria-label="Search"
+           [(ngModel)]="queryModel"
+           [ngModelOptions]="{ standalone: true }"
+           ngbDropdownAnchor
+           (input)="resultsDropdown.close()"
+           (submit)="onSearch()"/>
+
+    <div ngbDropdownMenu class="w-100 p-0" style="max-height:320px; overflow:auto">
+      @if (isLoading()) {
+        <div class="dropdown-item text-muted">
+          Loading…
+        </div>
+      } @else {
+        @for (r of results; track $index) {
+          <button type="button"
+                  class="dropdown-item d-flex align-items-start"
+                  (click)="onLocationSelected(r)">
+            <div class="d-flex flex-column">
+              <div class="fw-semibold">{{ r.name }}</div>
+            </div>
+          </button>
+        }
+      }
+      @if (!isLoading() && results.length === 0) {
+        <div class="dropdown-item text-muted fst-italic" aria-disabled="true">Not found</div>
+      }
+    </div>
+
+  </div>
+
+  <div class="btn-group me-2 d-inline-flex align-items-center flex-shrink-0" ngbDropdown role="group">
+    <button [disabled]="!isValidQueryLength()" (click)="onSearch()" type="submit" class="btn btn-primary">Search {{ searchBy ?? "Search By" }}</button>
+    <button type="button" class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      @if (isSearchByCity()) {
+        <button (click)="setSearchBy(SearchBy.Zip)" ngbDropdownItem>{{SearchBy.Zip}}</button>
+      } @else {
+        <button (click)="setSearchBy(SearchBy.City)" ngbDropdownItem>{{SearchBy.City}}</button>
+      }
+    </div>
+  </div>
+
+</form>

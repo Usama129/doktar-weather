@@ -1,0 +1,13 @@
+<nav class="dw-navbar navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-none d-md-block" href="#">DoktarWeather</a>
+    <div class="d-flex">
+      <h5 class="me-3 my-0">{{getSelectedLocationName()}}, {{getSelectedCountryCode()}}</h5>
+      <p class="my-0">24</p>
+    </div>
+    <div class="d-flex">
+      <button type="button" class="btn btn-outline-secondary fs-6" (click)="launchCountrySelector()">{{getSelectedCountryCode()}}</button>
+    </div>
+  </div>
+</nav>
+

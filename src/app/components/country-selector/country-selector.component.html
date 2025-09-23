@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Select Country</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="mb-3">
+            <div class="input-group">
+                <input placeholder="Search Country" id="country" type="text" class="form-control"
+                    [(ngModel)]="countryModel" [ngbTypeahead]="searchCountry" [ngModelOptions]="{standalone: true}" />
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="saveCountry()">Save</button>
+</div>

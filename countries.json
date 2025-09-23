@@ -1,0 +1,487 @@
+[
+  {
+    "name": "Afghanistan",
+    "code": "AF",
+    "capital": "Kabul"
+  },
+  {
+    "name": "Albania",
+    "code": "AL",
+    "capital": "Tirana"
+  },
+  {
+    "name": "Algeria",
+    "code": "DZ",
+    "capital": "Algiers"
+  },
+  {
+    "name": "Andorra",
+    "code": "AD",
+    "capital": "Andorra la Vella"
+  },
+  {
+    "name": "Angola",
+    "code": "AO",
+    "capital": "Luanda"
+  },
+  {
+    "name": "Argentina",
+    "code": "AR",
+    "capital": "Buenos Aires"
+  },
+  {
+    "name": "Armenia",
+    "code": "AM",
+    "capital": "Yerevan"
+  },
+  {
+    "name": "Australia",
+    "code": "AU",
+    "capital": "Canberra"
+  },
+  {
+    "name": "Austria",
+    "code": "AT",
+    "capital": "Vienna"
+  },
+  {
+    "name": "Azerbaijan",
+    "code": "AZ",
+    "capital": "Baku"
+  },
+  {
+    "name": "Bangladesh",
+    "code": "BD",
+    "capital": "Dhaka"
+  },
+  {
+    "name": "Belarus",
+    "code": "BY",
+    "capital": "Minsk"
+  },
+  {
+    "name": "Belgium",
+    "code": "BE",
+    "capital": "Brussels"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "code": "BA",
+    "capital": "Sarajevo"
+  },
+  {
+    "name": "Brazil",
+    "code": "BR",
+    "capital": "Brasília"
+  },
+  {
+    "name": "Bulgaria",
+    "code": "BG",
+    "capital": "Sofia"
+  },
+  {
+    "name": "Canada",
+    "code": "CA",
+    "capital": "Ottawa"
+  },
+  {
+    "name": "Chile",
+    "code": "CL",
+    "capital": "Santiago"
+  },
+  {
+    "name": "China",
+    "code": "CN",
+    "capital": "Beijing"
+  },
+  {
+    "name": "Colombia",
+    "code": "CO",
+    "capital": "Bogotá"
+  },
+  {
+    "name": "Croatia",
+    "code": "HR",
+    "capital": "Zagreb"
+  },
+  {
+    "name": "Cyprus",
+    "code": "CY",
+    "capital": "Nicosia"
+  },
+  {
+    "name": "Czechia",
+    "code": "CZ",
+    "capital": "Prague"
+  },
+  {
+    "name": "Denmark",
+    "code": "DK",
+    "capital": "Copenhagen"
+  },
+  {
+    "name": "Egypt",
+    "code": "EG",
+    "capital": "Cairo"
+  },
+  {
+    "name": "Estonia",
+    "code": "EE",
+    "capital": "Tallinn"
+  },
+  {
+    "name": "Finland",
+    "code": "FI",
+    "capital": "Helsinki"
+  },
+  {
+    "name": "France",
+    "code": "FR",
+    "capital": "Paris"
+  },
+  {
+    "name": "Georgia",
+    "code": "GE",
+    "capital": "Tbilisi"
+  },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "capital": "Berlin"
+  },
+  {
+    "name": "Greece",
+    "code": "GR",
+    "capital": "Athens"
+  },
+  {
+    "name": "Hungary",
+    "code": "HU",
+    "capital": "Budapest"
+  },
+  {
+    "name": "Iceland",
+    "code": "IS",
+    "capital": "Reykjavik"
+  },
+  {
+    "name": "India",
+    "code": "IN",
+    "capital": "New Delhi"
+  },
+  {
+    "name": "Indonesia",
+    "code": "ID",
+    "capital": "Jakarta"
+  },
+  {
+    "name": "Iran",
+    "code": "IR",
+    "capital": "Tehran"
+  },
+  {
+    "name": "Iraq",
+    "code": "IQ",
+    "capital": "Baghdad"
+  },
+  {
+    "name": "Ireland",
+    "code": "IE",
+    "capital": "Dublin"
+  },
+  {
+    "name": "Israel",
+    "code": "IL",
+    "capital": "Jerusalem"
+  },
+  {
+    "name": "Italy",
+    "code": "IT",
+    "capital": "Rome"
+  },
+  {
+    "name": "Japan",
+    "code": "JP",
+    "capital": "Tokyo"
+  },
+  {
+    "name": "Jordan",
+    "code": "JO",
+    "capital": "Amman"
+  },
+  {
+    "name": "Kazakhstan",
+    "code": "KZ",
+    "capital": "Astana"
+  },
+  {
+    "name": "Kenya",
+    "code": "KE",
+    "capital": "Nairobi"
+  },
+  {
+    "name": "Kuwait",
+    "code": "KW",
+    "capital": "Kuwait City"
+  },
+  {
+    "name": "Kyrgyzstan",
+    "code": "KG",
+    "capital": "Bishkek"
+  },
+  {
+    "name": "Latvia",
+    "code": "LV",
+    "capital": "Riga"
+  },
+  {
+    "name": "Lebanon",
+    "code": "LB",
+    "capital": "Beirut"
+  },
+  {
+    "name": "Lithuania",
+    "code": "LT",
+    "capital": "Vilnius"
+  },
+  {
+    "name": "Luxembourg",
+    "code": "LU",
+    "capital": "Luxembourg"
+  },
+  {
+    "name": "Malaysia",
+    "code": "MY",
+    "capital": "Kuala Lumpur"
+  },
+  {
+    "name": "Malta",
+    "code": "MT",
+    "capital": "Valletta"
+  },
+  {
+    "name": "Mexico",
+    "code": "MX",
+    "capital": "Mexico City"
+  },
+  {
+    "name": "Moldova",
+    "code": "MD",
+    "capital": "Chișinău"
+  },
+  {
+    "name": "Monaco",
+    "code": "MC",
+    "capital": "Monaco"
+  },
+  {
+    "name": "Mongolia",
+    "code": "MN",
+    "capital": "Ulaanbaatar"
+  },
+  {
+    "name": "Montenegro",
+    "code": "ME",
+    "capital": "Podgorica"
+  },
+  {
+    "name": "Morocco",
+    "code": "MA",
+    "capital": "Rabat"
+  },
+  {
+    "name": "Nepal",
+    "code": "NP",
+    "capital": "Kathmandu"
+  },
+  {
+    "name": "Netherlands",
+    "code": "NL",
+    "capital": "Amsterdam"
+  },
+  {
+    "name": "New Zealand",
+    "code": "NZ",
+    "capital": "Wellington"
+  },
+  {
+    "name": "Nigeria",
+    "code": "NG",
+    "capital": "Abuja"
+  },
+  {
+    "name": "North Macedonia",
+    "code": "MK",
+    "capital": "Skopje"
+  },
+  {
+    "name": "Norway",
+    "code": "NO",
+    "capital": "Oslo"
+  },
+  {
+    "name": "Oman",
+    "code": "OM",
+    "capital": "Muscat"
+  },
+  {
+    "name": "Pakistan",
+    "code": "PK",
+    "capital": "Islamabad"
+  },
+  {
+    "name": "Palestine",
+    "code": "PS",
+    "capital": "East Jerusalem"
+  },
+  {
+    "name": "Philippines",
+    "code": "PH",
+    "capital": "Manila"
+  },
+  {
+    "name": "Poland",
+    "code": "PL",
+    "capital": "Warsaw"
+  },
+  {
+    "name": "Portugal",
+    "code": "PT",
+    "capital": "Lisbon"
+  },
+  {
+    "name": "Qatar",
+    "code": "QA",
+    "capital": "Doha"
+  },
+  {
+    "name": "Romania",
+    "code": "RO",
+    "capital": "Bucharest"
+  },
+  {
+    "name": "Russia",
+    "code": "RU",
+    "capital": "Moscow"
+  },
+  {
+    "name": "Saudi Arabia",
+    "code": "SA",
+    "capital": "Riyadh"
+  },
+  {
+    "name": "Serbia",
+    "code": "RS",
+    "capital": "Belgrade"
+  },
+  {
+    "name": "Singapore",
+    "code": "SG",
+    "capital": "Singapore"
+  },
+  {
+    "name": "Slovakia",
+    "code": "SK",
+    "capital": "Bratislava"
+  },
+  {
+    "name": "Slovenia",
+    "code": "SI",
+    "capital": "Ljubljana"
+  },
+  {
+    "name": "South Africa",
+    "code": "ZA",
+    "capital": "Pretoria"
+  },
+  {
+    "name": "South Korea",
+    "code": "KR",
+    "capital": "Seoul"
+  },
+  {
+    "name": "Spain",
+    "code": "ES",
+    "capital": "Madrid"
+  },
+  {
+    "name": "Sri Lanka",
+    "code": "LK",
+    "capital": "Sri Jayawardenepura Kotte"
+  },
+  {
+    "name": "Sweden",
+    "code": "SE",
+    "capital": "Stockholm"
+  },
+  {
+    "name": "Switzerland",
+    "code": "CH",
+    "capital": "Bern"
+  },
+  {
+    "name": "Syria",
+    "code": "SY",
+    "capital": "Damascus"
+  },
+  {
+    "name": "Tajikistan",
+    "code": "TJ",
+    "capital": "Dushanbe"
+  },
+  {
+    "name": "Thailand",
+    "code": "TH",
+    "capital": "Bangkok"
+  },
+  {
+    "name": "Tunisia",
+    "code": "TN",
+    "capital": "Tunis"
+  },
+  {
+    "name": "Turkey",
+    "code": "TR",
+    "capital": "Ankara"
+  },
+  {
+    "name": "Turkmenistan",
+    "code": "TM",
+    "capital": "Ashgabat"
+  },
+  {
+    "name": "Ukraine",
+    "code": "UA",
+    "capital": "Kyiv"
+  },
+  {
+    "name": "United Arab Emirates",
+    "code": "AE",
+    "capital": "Abu Dhabi"
+  },
+  {
+    "name": "United Kingdom",
+    "code": "GB",
+    "capital": "London"
+  },
+  {
+    "name": "United States",
+    "code": "US",
+    "capital": "Washington, D.C."
+  },
+  {
+    "name": "Uzbekistan",
+    "code": "UZ",
+    "capital": "Tashkent"
+  },
+  {
+    "name": "Vietnam",
+    "code": "VN",
+    "capital": "Hanoi"
+  },
+  {
+    "name": "Yemen",
+    "code": "YE",
+    "capital": "Sana'a"
+  }
+]
