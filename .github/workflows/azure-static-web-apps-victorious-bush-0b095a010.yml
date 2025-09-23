@@ -10,7 +10,7 @@ on:
       - master
 
 env:
-  ANGULAR_PROJECT: doktar-weather-angular
+  ANGULAR_PROJECT: doktar-weather
   BUILD_DIR: dist/doktar-weather/browser
 
 jobs:
