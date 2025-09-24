@@ -29,7 +29,7 @@
     </div>
   </main>
 
-  <div class="toast-container sticky-bottom align-self-start align-self-sm-end p-3">
+  <div class="toast-container position-fixed p-3">
     @for (toast of getToasts(); track $index) {
       <div
         class="toast show align-items-center text-bg-{{toast.type}} border-0 mb-2"
