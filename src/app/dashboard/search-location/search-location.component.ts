@@ -136,11 +136,11 @@ export class SearchLocationComponent implements OnInit {
   }
 
   private showZipCodeError(): void {
-    this.toastService.show('Problem with zip code. If you are not searching in ' + this.getSelectedCountryCode() + ', select correct country from above', 'danger');
+    this.toastService.show('Could not find your zip code in ' + this.getSelectedCountryCode() +'. Make sure you have selected the correct country', 'danger');
   }
 
   private showCityError(): void {
-    this.toastService.show('No cities found. If you are not searching in ' + this.getSelectedCountryCode() + ', select correct country above', 'danger');
+    this.toastService.show('Could not find your city in ' + this.getSelectedCountryCode() +'. Make sure you have selected the correct country.', 'danger');
   }
 
   protected readonly SearchBy = SearchBy;
