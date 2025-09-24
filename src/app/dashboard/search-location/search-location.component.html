@@ -16,7 +16,7 @@
           Loading…
         </div>
       } @else {
-        @for (r of results; track $index) {
+        @for (r of getResults(); track $index) {
           <button type="button"
                   class="dropdown-item d-flex align-items-start"
                   (click)="onLocationSelected(r)">
@@ -26,7 +26,7 @@
           </button>
         }
       }
-      @if (!isLoading() && results.length === 0) {
+      @if (!isLoading() && getResults().length === 0) {
         <div class="dropdown-item text-muted fst-italic" aria-disabled="true">Not found</div>
       }
     </div>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="search-by btn-group me-2 my-2 d-inline-flex align-items-center flex-shrink-0" ngbDropdown role="group">
-    <button [disabled]="!isValidQueryLength()" (click)="onSearch()" type="submit" class="btn btn-primary">Search {{ searchBy ?? "Search By" }}</button>
+    <button [disabled]="!isValidQueryLength()" (click)="onSearch()" type="submit" class="btn btn-primary">Search {{ isSearchByCity() ? SearchBy.City : SearchBy.Zip }}</button>
     <button type="button" class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
     <div class="dropdown-menu" ngbDropdownMenu>
       @if (isSearchByCity()) {
