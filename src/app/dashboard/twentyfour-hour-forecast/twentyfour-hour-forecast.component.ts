@@ -33,7 +33,7 @@ export class TwentyfourHourForecastComponent {
   }
 
   getHourlyData(): HourWeatherDataPoint[] | undefined {
-    return this.getWeather()?.hourly.slice(0, 24);
+    return this.getWeather()?.hourly.slice(1, 25);
   }
 
   getIconUrl(hourWeatherData: HourWeatherDataPoint): string {

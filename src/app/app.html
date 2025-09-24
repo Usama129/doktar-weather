@@ -1,51 +1,53 @@
-<main class="main">
-  <app-header></app-header>
-  <div class="container p-3">
-    <div class="row py-2">
-      <search-location></search-location>
-    </div>
-    <div class="row py-2">
-      <div class="col-12 col-lg-4 my-3">
-        <div class="weather-container h-100 rounded-3 shadow-lg p-2">
-          <current-weather class="d-block w-100 h-100"></current-weather>
+<div class="app-container d-flex flex-column min-vh-100">
+  <main class="main flex-grow-1">
+    <app-header></app-header>
+    <div class="container p-3">
+      <div class="row py-2">
+        <search-location></search-location>
+      </div>
+      <div class="row py-2">
+        <div class="col-12 col-lg-4 my-3">
+          <div class="weather-container h-100 rounded-3 shadow-lg p-2">
+            <current-weather class="d-block w-100 h-100"></current-weather>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8 my-3">
+          <div class="weather-container h-100 rounded-3 shadow-lg p-2">
+            <five-day-forecast class="d-block w-100 h-100"></five-day-forecast>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-lg-8 my-3">
-        <div class="weather-container h-100 rounded-3 shadow-lg p-2">
-          <five-day-forecast class="d-block w-100 h-100"></five-day-forecast>
+      <div class="row py-2">
+        <div class="col my-1">
+          <div class="weather-container h-100 rounded-3 shadow-lg p-2">
+            <twentyfour-hour-forecast class="d-block w-100 h-100"></twentyfour-hour-forecast>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row py-2">
-      <div class="col my-1">
-        <div class="weather-container h-100 rounded-3 shadow-lg p-2">
-          <twentyfour-hour-forecast class="d-block w-100 h-100"></twentyfour-hour-forecast>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+  </main>
 
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  @for (toast of getToasts(); track $index) {
-    <div
-      class="toast show align-items-center text-bg-{{toast.type}} border-0 mb-2"
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
-      <div class="d-flex">
-        <div class="toast-body">
-          {{ toast.message }}
+  <div class="toast-container sticky-bottom align-self-start align-self-sm-end p-3">
+    @for (toast of getToasts(); track $index) {
+      <div
+        class="toast show align-items-center text-bg-{{toast.type}} border-0 mb-2"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            {{ toast.message }}
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            (click)="removeToast(toast)"
+          ></button>
         </div>
-        <button
-          type="button"
-          class="btn-close btn-close-white me-2 m-auto"
-          (click)="removeToast(toast)"
-        ></button>
       </div>
-    </div>
-  }
+    }
+  </div>
 </div>
 
 <router-outlet/>
